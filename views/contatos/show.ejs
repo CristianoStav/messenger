@@ -1,0 +1,14 @@
+<%include ../shared/header%>
+<header>
+    <h2>CrizuZap - Dados do contato</h2>
+</header>
+<section>
+    <form action="/contato/<%- id %>?_method=delete" method="POST">
+        <p>Nome: <%- contato.nome %></p>
+        <p>E-mail: <%- contato.email %></p>
+        <p>
+            <button type="submit">Excluir</button>
+            <a href="/contato/<%- id %>/editar">Editar</a>
+        </p>
+    </form>
+</section>

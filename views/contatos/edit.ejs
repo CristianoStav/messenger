@@ -1,0 +1,14 @@
+<% include ../shared/header%>
+<header>
+    <h2>CrizuZap - Editar contato</h2>
+</header>
+<section>
+    <form action="/contato/<%- id %>?_method=put" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="contato[nome]" value="<%- contato.nome %>">
+        <label>E-mail:</label>
+        <input type="text" name="contato[email]" value="<%- contato.email %>">
+        <br>
+        <button type="submit">Atualizar</button>
+    </form>
+</section>

@@ -1,0 +1,7 @@
+const auth = require('../middlewares/authenticator');
+
+module.exports = (app) => {
+    const { chat } = app.controllers;
+
+    app.get('/chat', auth, chat.index);
+};

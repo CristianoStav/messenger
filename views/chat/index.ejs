@@ -1,0 +1,28 @@
+<% include ../shared/header %>
+<script src="/socket.io/socket.io.js"></script>
+<header>
+    <h3>CrizuZap - Chat</h3>
+</header>
+<script>
+    alert('Olá');
+    const socket = io();
+    socket.on('send-client', msg => {
+        document.getElementById('chat').innerHTML += msg;
+        console.log();
+    });
+    function enviar(){
+        const nome = document.getElementById('nome').value;
+        const msg = document.getElementById('msg').value;
+
+        socket.emit('send-server', { nome, msg });
+
+    };
+</script>
+<section>
+    <pre id="chat"></pre>
+    <input type="hidden" id="nome" value="<%- usuario.nome %>">
+    <input type="text" id="msg" placeholder="Digite aqui...">
+    <button onclick="enviar();">Enviar</button>
+</section>
+<% include ../shared/exit %>
+<% include ../shared/footer %>
