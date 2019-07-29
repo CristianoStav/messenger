@@ -22,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 consign({})
   .include('models')
@@ -40,6 +41,6 @@ io.on('connection', (client) => {
 app.use(error.notFound);
 app.use(error.default);
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Servidor iniciado na porta ${port}`);
 });
