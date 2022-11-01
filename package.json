@@ -17,7 +17,7 @@
     "express": "~4.6.1",
     "express-load": "~1.1.14",
     "express-session": "~1.6.5",
-    "forever-monitor": "~1.2.3",
+    "forever-monitor": "~1.7.2",
     "method-override": "~2.1.1",
     "mongoose": "~3.8.13",
     "redis": "~0.11.0",
